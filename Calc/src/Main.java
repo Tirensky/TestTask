@@ -72,10 +72,6 @@ public class Main {
         return isRoman ? converter.arabianToRoman(result) : String.valueOf(result);
     }
 
-    public static void main(String[] args) {
-        System.out.println(calc("1 + 2 + 3"));
-    }
-
     public static int add(int i1, int i2) {
         return i1 + i2;
     }
