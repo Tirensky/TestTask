@@ -14,7 +14,7 @@ public class Main {
         try {
             if (calcLine.length > 3) throw new MathOperationFormatException();
         } catch (MathOperationFormatException e) {
-            return RED +  e.getMessage() + RESET;
+            return RED + e + RESET;
         }
 
         int i1 = 0;
@@ -33,7 +33,7 @@ public class Main {
         try {
             if (index == -1) throw new ArithmeticActionException();
         } catch (ArithmeticActionException e) {
-            return RED +  e.getMessage() + RESET;
+            return RED + e.getMessage() + RESET;
         }
 
         // throw NumberCompatibilityException;
@@ -51,7 +51,7 @@ public class Main {
                 throw  new NumberCompatibilityException();
             }
         } catch (NumberCompatibilityException e) {
-            return RED +  e.getMessage() + RESET;
+            return RED + e + RESET;
         }
 
         int result = 0;
@@ -66,10 +66,14 @@ public class Main {
                 case "/" -> result = divide(i1, i2);
             }
         } catch (NumberTooLargeException e) {
-            return RED +  e.getMessage() + RESET;
+            return RED + e + RESET;
         }
 
         return isRoman ? converter.arabianToRoman(result) : String.valueOf(result);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(calc("1 + 2 + 3"));
     }
 
     public static int add(int i1, int i2) {
