@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.TreeMap;
 
 public class Main {
@@ -8,6 +9,12 @@ public class Main {
     private static boolean isRoman = false;
     private static String[] actions = {"+", "-", "/", "*"};
 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(calc(scanner.nextLine()));
+        scanner.close();
+    }
+    
     public static String calc(String input) {
         String[] calcLine = input.split(" ");
         // throw MathOperationFormatException
@@ -20,7 +27,6 @@ public class Main {
         int i1 = 0;
         int i2 = 0;
         int index = -1;
-
 
         for (int i = 0; i < actions.length; i++) {
             if (calcLine[1].contains(actions[i])) {
